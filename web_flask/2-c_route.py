@@ -8,16 +8,19 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def index():
+    """display “Hello HBNB!"""
     return "Hello HBNB!"
 
 
 @app.route('/hbnb', strict_slashes=False)
-def HBNB():
+def hbnb():
+    """display “HBNB"""
     return "HBNB"
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def show_Text(text):
+def show_text(text):
+    """display text"""
     text = text.replace('_', ' ')
     return f"C {escape(text)}"
 

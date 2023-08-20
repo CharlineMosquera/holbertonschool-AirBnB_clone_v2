@@ -8,29 +8,34 @@ app = Flask(__name__)
 
 @app.route('/', strict_slashes=False)
 def index():
+    """display “Hello HBNB!"""
     return "Hello HBNB!"
 
 
 @app.route('/hbnb', strict_slashes=False)
-def HBNB():
+def hbnb():
+    """display “HBNB"""
     return "HBNB"
 
 
 @app.route('/c/<text>', strict_slashes=False)
-def show_Text(text):
+def show_text(text):
+    """display text"""
     text = text.replace('_', ' ')
     return f"C {escape(text)}"
 
 
 @app.route('/python', strict_slashes=False)
 @app.route('/python/<text>', strict_slashes=False)
-def show_Python(text='is cool'):
+def show_python(text='is cool'):
+    """display text"""
     text = text.replace('_', ' ')
     return f"Python {escape(text)}"
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
-def show_Number(n):
+def show_number(n):
+    """display number"""
     return f"{escape(n)} is a number"
 
 
